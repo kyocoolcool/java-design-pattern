@@ -920,9 +920,9 @@ class SchoolManager {
 | 構建模式 | 結構模式         | 行為模式       |
 | :--------- | :-----------: | ----------------: |
 | **[Builder (創建者)](./builder/README.md)** | **[Adapter (適配器)](./adapter/README.md)** | ~~**[Chain of Responsibility (職責鏈模式)](./chain/README.md)**~~ |
-| **[Factory Method （工廠方法)](./factory-method/README.md)** | **[Bridge (橋接模式)](./adapter/README.md)** | ~~**[Command (命令模式)](./command/README.md)**~~ |
-| **[Abstract Factory (抽象工廠)](./abstract-factory/README.md)** | **[Composite (組合模式)](./composite/README.md)** | ~~**[Interpreter (解釋器模式)](./interpreter/README.md)**~~ |
-| **[Prototype (原型模式)](./prototype/README.md)** |  **[Decorator (裝飾模式)](./decorator/README.md)** |  ~~**[Iterator (迭代器模式)](./iterator/README.md)**~~ |
+| **[Factory Method （工廠方法)](./factory-method/README.md)** | **[Bridge (橋接模式)](./bridge/README.md)** | ~~**[Command (命令模式)](./command/README.md)**~~ |
+| **[Abstract Factory (抽象工廠)](./abstract-factory/README.md)** | **[Decorator (裝飾模式)](./decorator/README.md)** | ~~**[Interpreter (解釋器模式)](./interpreter/README.md)**~~ |
+| **[Prototype (原型模式)](./prototype/README.md)** | **[Composite (組合模式)](./composite/README.md)**|  ~~**[Iterator (迭代器模式)](./iterator/README.md)**~~ |
 | **[Singleton (單例模式)](./singleton/README.md)** | ~~**[Facade (外觀模式)](./facade/README.md)**~~ | ~~**[Mediator (中介者模式)](./mediator/README.md)**~~ |
 | | **[Flyweight (享元模式)](./flyweight/README.md)** | ~~**[Memento (備忘錄模式)](./memeno/README.md)**~~ |
 | | ~~**[Proxy (代理模式) ](./proxy/README.md)**~~ | ~~**[Observer (觀察者模式)](./observer/README.md)**~~ |

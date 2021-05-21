@@ -6,9 +6,11 @@ package com.kyocoolcool.factory.method.example3;
  */
 public class Consumer {
     public static void main(String[] args) {
-        Car maserati = new MaseratiFactory().getCar();
-        Car toyota = new ToyotaFactory().getCar();
-        System.out.println(maserati.getName());
-        System.out.println(toyota.getName());
+//        Car maserati = new MaseratiFactory().getCar();
+//        Car toyota = new ToyotaFactory().getCar();
+//        System.out.println(maserati.getName());
+//        System.out.println(toyota.getName());
+        Car car = new TeslaFactory().getCar();
+        System.out.println(car.getName());
     }
 }

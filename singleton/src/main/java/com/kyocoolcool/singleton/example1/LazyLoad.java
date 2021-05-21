@@ -12,22 +12,22 @@ public class LazyLoad {
     }
 
     public static LazyLoad getInstance() {
-//        if (obj == null) {
-//            synchronized (B.class) {
+        if (obj == null) {
+            synchronized (LazyLoad.class) {
                 if (obj == null) {
                     obj = new LazyLoad();//instance will be created at request time
                 }
-//            }
-//        }
+            }
+        }
         return obj;
     }
 
-//    public static void main(String[] args) {
-//        for (int i = 0; i < 10; i++) {
-//            new Thread(()->{
-//                B.getInstance();
-//            }).start();
-//        }
-//    }
+    public static void main(String[] args) {
+        for (int i = 0; i < 10; i++) {
+            new Thread(()->{
+                LazyLoad.getInstance();
+            }).start();
+        }
+    }
 
 }

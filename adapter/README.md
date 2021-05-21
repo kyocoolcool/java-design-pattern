@@ -1,86 +1,21 @@
-# 適配器模式 ( Adapter )
-  
-## 別名
+# Adapter
 
-> Wrapper (包裝器)
+## Purpose
 
-## 用途
+> Adapter is a structural design pattern that allows objects with incompatible interfaces to collaborate 
 
-> 將一個類的接口轉換成客戶希望的另外一個接口。 Adapter模式使得原本由于接口不兼容
-  而不能一起工作的那些類可以一起工作。
+![](./adapter.png)
 
-## 實例
 
-> 假設一下你的存儲卡里有一些照片，你需要把它們轉移到你的電腦上。為了轉移它們，你
-需要一些與你的電腦接口兼容的適配器，這樣你就可以將存儲卡連接到你的電腦上。這里，
-讀卡器就起到了適配器的作用。更經典的例子就是人盡皆知的電源適配器了，一個三腳的
-插頭不能連接到兩個孔的插座上，它需要一個電源適配器，使它與兩個分叉的插座兼容。
+## Advantage of Adapter Design Pattern
+> Single Responsibility Principle. You can separate the interface or data conversion code from the primary business logic of the program.
+> Open/Closed Principle. You can introduce new types of adapters into the program without breaking the existing client code, as long as they work with the adapters through the client interface.
 
-## 模式分析
+## Disadvantage of Adapter Design Pattern
+> The overall complexity of the code increases because you need to introduce a set of new interfaces and classes. Sometimes it’s simpler just to change the service class so that it matches the rest of your code. 
 
-> 假定現在有一個小汽車司機，他只會駕駛小型汽車，並不會駕駛公共汽車。
->
-> 現在分別定義小汽車 ( Car ) 和公共汽車 ( Bus ) 兩種接口
+## Usage of Adapter Pattern
+> Use the Adapter class when you want to use some existing class, but its interface isn’t compatible with the rest of your code.    
+> Use the pattern when you want to reuse several existing subclasses that lack some common functionality that can’t be added to the superclass.     
 
-```
-public interface Car {
-  void drive();
-}
-
-public class Bus {
-  private static final Logger LOGGER = LoggerFactory.getLogger(Bus.class);
-  public void run() {
-    LOGGER.info("公共汽車在行駛");
-  }
-}
-```
-> 這個司機需要獲得一輛小汽車才能進行駕駛活動
-
-```
-public class Driver implements Car {
-  private Car car;
-  @Override
-  public void drive() {
-    car.drive();
-  }
-  public Driver(Car car) {
-    this.car = car;
-  }
-}
-```
-> 現在這個司機有急事，必須馬上趕往公司，可是只借到了一輛公共汽車，並且車上沒有任何人，
-現在必須馬上將司機的駕駛小汽車的技能轉化成駕駛公共汽車的技能
-
-```
-public class BusAdapter implements Car {
-
-  private Bus bus;
-
-  public BusAdapter() {
-    this.bus = new Bus();
-  }
-
-  @Override
-  public void drive() {
-    bus.run();
-  }
-}
-```
-> 經過技能轉化，司機成功的駕駛公共汽車駛向了公司
-
-## 適用場景
-
->* 需要使用的類的接口與需要的接口類型不匹配
->* 需要創建一個可重用的類，它可以與不相關的或不可預見的類進行協作，也就是說，
-類不一定具有兼容的接口
->* 需要使用几個現有的子類，但是通過子類化每個子類來調整它們的接口是不切實際的。
-對象適配器可以調整其父類的接口。
-
-## 類適配器和對象適配器的區別
-
->* 類適配器的適配功能是通過被適配類（接口）的一個對象間接完成的。因此，類適配器不能無法
-對被適配類的所有子類進行適配
->* 類適配器重寫了被適配類（接口）的方法，所以，類適配器可以看做被適配類（接口）的一個子類
->* 類適配器一般只需持有一個被適配類（接口）的對象，並不需要額外的對被適配類（接口）的引用
->* 對象適配器可以和多個被適配類（接口）的對象協同工作——即被適配類（接口）本身及其所有子類。適配器也可以一次為所有的被適配類（接口）添加自定義的功能。
->* 對象適配器使得重寫被適配類（接口）的方法變成了不可能，這時需要的是被適配類（接口）的子類，而不是被適配類（接口）本身
+## Adapter used in Spring MVC multi servletDispatcher assign controller
